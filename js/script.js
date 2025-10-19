@@ -1,6 +1,7 @@
 // Menu mobile toggle
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
+const navbar = document.querySelector('.navbar');
 
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -35,15 +36,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mudar navbar ao rolar
+// Mudar navbar ao rolar - Efeito melhorado
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
         navbar.style.padding = '0.5rem 0';
-        navbar.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.padding = '1rem 0';
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        navbar.classList.remove('scrolled');
+        navbar.style.padding = '0.8rem 0';
+    }
+});
+
+// Adicionar classe inicial
+window.addEventListener('load', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     }
 });
 
