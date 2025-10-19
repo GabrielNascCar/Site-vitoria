@@ -90,12 +90,12 @@ ul {
 
 .btn-primary:hover {
     background-color: transparent;
-    color: var(--primary-color);
+    color: var(--white);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--primary-color);
+    color: var(--white);
 }
 
 .btn-secondary:hover {
