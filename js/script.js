@@ -62,23 +62,30 @@ if (contactForm) {
         e.preventDefault();
         
         // Coletar dados do formulário
-        const formData = {
-            nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            telefone: document.getElementById('telefone').value,
-            assunto: document.getElementById('assunto').value,
-            mensagem: document.getElementById('mensagem').value
-        };
+        const nome = document.getElementById('nome').value;
+        const assunto = document.getElementById('assunto').value;
+        const mensagem = document.getElementById('mensagem').value;
         
         // Validação básica
-        if (!formData.nome || !formData.email || !formData.assunto || !formData.mensagem) {
+        if (!nome || !assunto || !mensagem) {
             alert('Por favor, preencha todos os campos obrigatórios.');
             return;
         }
         
-        // Simular envio (substituir por código real de envio)
-        console.log('Dados do formulário:', formData);
-        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+        // Formatar mensagem para WhatsApp (formato simplificado)
+        const texto = `Olá! Me chamo ${nome}, assunto: ${assunto}. ${mensagem}`;
+        
+        // Número de telefone (formato internacional sem espaços ou caracteres especiais)
+        const telefone = '558486743782';
+        
+        // Codificar mensagem para URL
+        const mensagemCodificada = encodeURIComponent(texto);
+        
+        // Criar link do WhatsApp
+        const urlWhatsApp = `https://wa.me/${telefone}?text=${mensagemCodificada}`;
+        
+        // Abrir WhatsApp em nova aba
+        window.open(urlWhatsApp, '_blank');
         
         // Limpar formulário
         contactForm.reset();
