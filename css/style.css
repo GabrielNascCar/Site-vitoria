@@ -756,27 +756,59 @@ footer {
 
 /* Mobile Pequeno */
 @media (max-width: 480px) {
+    /* CORREÇÕES ESPECÍFICAS PARA O HEADER/NAVBAR */
+    .navbar {
+        padding: 0.5rem 0; /* Reduz padding vertical do navbar */
+    }
+    
     .nav-container {
-        padding: 0.8rem 0.8rem;
+        padding: 0.6rem 0.8rem; /* Reduz ainda mais o padding interno */
+    }
+    
+    .nav-logo {
+        gap: 0.5rem; /* Reduz espaçamento entre ícone e texto */
     }
     
     .nav-logo a {
-        font-size: 1.1rem;
+        font-size: 1rem; /* Texto menor no logo */
+        font-weight: 600;
     }
     
     .logo-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+        width: 32px; /* Ícone menor */
+        height: 32px;
+        font-size: 0.9rem;
     }
     
     .nav-menu {
-        width: 100%; /* Menu ocupa toda a tela em mobile muito pequeno */
-        padding: 80px 1rem 2rem;
+        width: 100%;
+        padding: 70px 1rem 2rem; /* Reduz padding top */
     }
     
+    .nav-link {
+        padding: 0.8rem 1rem; /* Links um pouco mais compactos */
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .nav-link i {
+        font-size: 1rem; /* Ícones menores */
+        margin-right: 0.6rem;
+    }
+    
+    .nav-toggle {
+        width: 28px; /* Hamburger menu menor */
+        height: 24px;
+    }
+    
+    .bar {
+        height: 2px; /* Barras mais finas */
+        margin: 4px 0;
+    }
+    
+    /* Mantém o resto do seu CSS existente */
     .hero {
-        padding: 80px 0 30px;
+        padding: 70px 0 25px; /* Ajuste sutil no hero também */
     }
     
     .hero-content h1 {
